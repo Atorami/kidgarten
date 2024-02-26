@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Przedszkole publiczne - Bajkowa Akademia</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @font-face {
+        font-family: "Mousie";
+        src: url("/font/mm/MouseMemoirs-Regular.ttf") format("opentype");
+      }
+      .mousie-font {
+        font-family: "Mousie", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <body class="bg-[url('/img/bg.png')] bg-no-repeat bg-cover"> -->
+    <header class="bg-white shadow-md py-4 fixed w-full z-20">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="logo">
+          <h1 class="text-4xl text-green-500 font-bold">Bajkowa Akademia</h1>
+          <p>PRZEDSZKOLE PUBLICZNE W GOLENIOWIE</p>
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="hidden" />
+        <nav class="navigation">
+          <ul class="flex space-x-4 items-end sm:space-x-6 sm:items-center">
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="#" class="flex flex-col items-center">
+                <img
+                  src="/img/menu-img/house.png"
+                  alt="Glowna"
+                  class="w-16 mb-2"
+                />Glówna
+              </a>
+            </li>
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="#" class="flex flex-col items-center">
+                <img
+                  src="/img/menu-img/rubber-duck.png"
+                  alt="Informacja"
+                  class="w-16 mb-2"
+                />
+                Informacja
+              </a>
+            </li>
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="#" class="flex flex-col items-center">
+                <img
+                  src="/img/menu-img/pic.png"
+                  alt="Galeria"
+                  class="w-16 mb-2"
+                />Galeria</a
+              >
+            </li>
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="#" class="flex flex-col items-center">
+                <img
+                  src="/img/menu-img/dino-kid.png"
+                  alt="Kontakt"
+                  class="w-16 mb-2"
+                />
+                Kontakt
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <label for="menu-toggle" class="block sm:hidden">&#9776;</label>
+      </div>
+    </header>
+
+    <section class="hero w-full h-screen overflow-hidden">
+      <div class="relative h-full bg-[url('/img/bg.jpg')] bg-cover bg-center">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"
+        ></div>
+        <div
+          class="container mx-auto h-full flex flex-col justify-center items-center relative z-10"
+        >
+          <h2
+            class="text-6xl font-bold text-white decoration-wavy text-center pb-12"
+          >
+            Przedszkole publiczne - Bajkowa Akademia
+          </h2>
+          <button
+            class="bg-orange-500 w-72 h-16 text-white font-bold text-xl hover:shadow-xl transition duration-300 ease-in-out rounded-2xl"
+          >
+            Skontaktuj się z nami
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="about w-wull h-[1200px]">
+      <div class="container mx-auto mt-24">
+        <div class="about-block mb-10 flex">
+          <div class="text-block w-1/2">
+            <h2 class="text-6xl text-bold mousie-font text-orange-500 pb-10">
+              Poznaj nas
+            </h2>
+            <p class="text-lg pt-16">
+              Przedszkole Publiczne "Bajkowa Akademia" wpisane jest do ewidencji
+              szkół i placówek publicznych prowadzonej przez Gminę Goleniów.
+              Nadzór nad placówką sprawuje Zachodniopomorski Kurator Oświaty.
+              Działamy od 2004 roku i przyjmujemy dzieci w wieku od 2,5 do 6
+              lat. Od 1 stycznia 2016 r. "Bajkowa Akademia" jest przedszkolem
+              publicznym. Dostosowując się do potrzeb aktywnych zawodowo
+              rodziców przedszkole czynne jest od poniedziałku do piątku w
+              godzinach od 6:30 do 16:30. Posiadamy własny, dobrze wyposażony i
+              bezpieczny plac zabaw.
+            </p>
+          </div>
+          <div class="img-block w-1/2">
+            <img src="/img/hands.jpg" alt="hands" class="rounded-t-2xl" />
+          </div>
+        </div>
+        <div class="goal-block flex flex-row justify-between mt-24">
+          <div class="img-block w-1/2">
+            <img src="/img/goal.jpeg" alt="hands" class="rounded-t-2xl" />
+          </div>
+          <div class="text-block w-1/2">
+            <h2
+              class="text-6xl text-bold mousie-font text-orange-500 pb-10 text-right"
+            >
+              Nasze cele
+            </h2>
+            <p class="text-lg text-right pt-16">
+              Tworząc przyjazną, rodzinną atmosferę chcemy zapewnić dzieciom
+              wspaniałe warunki do wszechstronnego rozwoju w poczuciu
+              bezpieczeństwa i akceptacji. Pragniemy, aby nasze przedszkolaki
+              wyrosły na osoby radosne, kreatywne, samodzielne i odpowiedzialne.
+              Bogaty program dydaktyczny umożliwi im rozbudzenie zainteresowań
+              oraz ciekawości świata, a bliski kontakt ze sztuką wykształci w
+              nich wrażliwość estetyczną i emocjonalną.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service h-[500px]">
+      <div class="container mx-auto">
+        <h2
+          class="text-6xl text-bold text-orange-500 pb-10 text-center mousie-font"
+        >
+          Dla czego my
+        </h2>
+        <div class="service-block">
+          <ul
+            class="flex flex-row justify-between text-center items-center py-10"
+          >
+            <li class="flex flex-col items-center">
+              <img
+                src="/img/why/1.png"
+                alt=""
+                class="w-28 mb-6"
+              />Wykwalifikowany<br />
+              personel
+            </li>
+            <li class="flex flex-col items-center">
+              <img src="/img/why/2.png" alt="" class="w-28 mb-6" />Indywidualne
+              podejście<br />
+              do każdego dziecka
+            </li>
+            <li class="flex flex-col items-center">
+              <img src="/img/why/3.png" alt="" class="w-28 mb-6" />Zdrowa dieta
+            </li>
+            <li class="flex flex-col items-center">
+              <img src="/img/why/4.png" alt="" class="w-28 mb-6" />Dodatkowe
+              zajęcia
+            </li>
+            <li class="flex flex-col items-center">
+              <img src="/img/why/5.png" alt="" class="w-28 mb-6" />Przyjazna
+              atmosfera
+            </li>
+            <li class="flex flex-col items-center">
+              <img src="/img/why/6.png" alt="" class="w-28 mb-6" />Organizacja
+              imprez<br />
+              kulturalnych i społecznych
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer h-[80px] bg-gray-300">
+      <div class="container mx-auto h-full p-8 flex items-center">
+        <p>© 2024 Przedszkole BAJKOWA AKADEMIA w Goleniowie</p>
+        <nav class="navigation"></nav>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  </body>
+</html>
