@@ -22,7 +22,7 @@
   </head>
   <body>
     <!-- <body class="bg-[url('/img/bg.png')] bg-no-repeat bg-cover"> -->
-    <header class="bg-white shadow-md py-4 fixed w-full z-20">
+    <header class="bg-white shadow-md py-4 fixed w-full z-50">
       <div class="container mx-auto flex justify-between items-center">
         <div class="logo">
           <h1 class="text-4xl text-green-500 font-bold">Bajkowa Akademia</h1>
@@ -84,13 +84,10 @@
       </div>
     </header>
 
-    <section class="hero w-full h-screen overflow-hidden">
-      <div class="relative h-full bg-[url('/img/bg.jpg')] bg-cover bg-center">
+    <section class="hero w-full h-screen overflow-hidden z-30">
+      <div class="h-full bg-[url('/img/bg.jpg')] bg-cover bg-center">
         <div
-          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"
-        ></div>
-        <div
-          class="container mx-auto h-full flex flex-col justify-center items-center relative z-10"
+          class="container mx-auto h-full flex flex-col justify-center items-center"
         >
           <h2
             class="text-6xl font-bold text-white decoration-wavy text-center pb-12"
@@ -105,7 +102,7 @@
         </div>
       </div>
     </section>
-    <section class="about w-wull h-[1200px]">
+    <section class="about w-wull h-[1200px] relative">
       <div class="container mx-auto mt-24">
         <div class="about-block mb-10 flex">
           <div class="text-block w-1/2">
@@ -125,12 +122,14 @@
             </p>
           </div>
           <div class="img-block w-1/2">
-            <img src="/img/hands.jpg" alt="hands" class="rounded-t-2xl" />
+            <img src="/img/hands.jpg" alt="hands" class="rounded-2xl" />
           </div>
         </div>
-        <div class="goal-block flex flex-row justify-between mt-24">
+        <div
+          class="goal-block flex flex-row justify-between mt-24 z-30 relative"
+        >
           <div class="img-block w-1/2">
-            <img src="/img/goal.jpeg" alt="hands" class="rounded-t-2xl" />
+            <img src="/img/goal.jpeg" alt="hands" class="rounded-2xl" />
           </div>
           <div class="text-block w-1/2">
             <h2
@@ -150,18 +149,29 @@
           </div>
         </div>
       </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        class="absolute z-10 bottom-0 left-0"
+      >
+        <path
+          fill="#ebf8ff"
+          fill-opacity="1"
+          d="M0,128L60,128C120,128,240,128,360,144C480,160,600,192,720,186.7C840,181,960,139,1080,106.7C1200,75,1320,53,1380,42.7L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
     </section>
 
-    <section class="service h-[500px]">
-      <div class="container mx-auto">
+    <section class="service h-[500px] blue-999 relative z-30">
+      <div class="container mx-auto pt-12">
         <h2
-          class="text-6xl text-bold text-orange-500 pb-10 text-center mousie-font"
+          class="text-6xl text-bold text-orange-500 pb-10 text-center mousie-font z-20"
         >
           Dla czego my
         </h2>
         <div class="service-block">
           <ul
-            class="flex flex-row justify-between text-center items-center py-10"
+            class="flex flex-row justify-between text-center items-center py-10 z-10"
           >
             <li class="flex flex-col items-center">
               <img
@@ -196,89 +206,90 @@
         </div>
       </div>
     </section>
-    <section class="news h-[1200px] w-full relative overflow-hidden">
+    <section
+      class="news h-[1200px] w-full relative overflow-hidden bg-[url('/img/bg.png')] relative"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        class="absolute z-1"
+      >
+        <path
+          fill="#ebf8ff"
+          fill-opacity="1"
+          d="M0,160L48,170.7C96,181,192,203,288,224C384,245,480,267,576,261.3C672,256,768,224,864,186.7C960,149,1056,107,1152,112C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+
       <div
-        class="parallax-bg absolute inset-0 bg-fixed bg-no-repeat bg-cover"
-        style="background-image: url('/img/bg.png')"
+        class="container mx-auto relative z-10 py-10 flex flex-col justify-between"
       >
         <h2
-          class="text-6xl text-center mousie-font text-orange-500 p-10 bg-white rounded-2xl mx-64 mt-10 shadow-md"
+          class="text-6xl text-center mousie-font text-orange-500 p-10 bg-white rounded-2xl mx-64 mb-12 shadow-sm z-40"
         >
           Aktualności
         </h2>
-        <div
-          class="container mx-auto relative z-10 py-10 flex flex-col justify-between"
-        >
-          <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row">
-            <img src="/img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
-            <div class="describe">
-              <h3 class="title text-2xl mousie-font">Title of new</h3>
-              <p class="mousie-font">Date: 01.03.2024</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                nisi explicabo nulla sequi magnam ullam fuga aliquid, eius
-                corporis iure voluptatem asperiores? Quia dicta ipsam at ad sunt
-                commodi eaque odio, quam, dignissimos omnis doloremque, est
-                tempore vitae. Perspiciatis sit, quo molestiae libero quis
-                commodi sed nulla sunt fugiat expedita quisquam veritatis
-                inventore illum minus in natus nisi, laborum quia!
-              </p>
-              <button
-                class="w-64 h-12 bg-orange-500 text-white rounded-xl mt-6"
-              >
-                Czytać
-              </button>
-            </div>
+        <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row">
+          <img src="/img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
+          <div class="describe">
+            <h3 class="title text-2xl mousie-font">Title of new</h3>
+            <p class="mousie-font">Date: 01.03.2024</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nisi
+              explicabo nulla sequi magnam ullam fuga aliquid, eius corporis
+              iure voluptatem asperiores? Quia dicta ipsam at ad sunt commodi
+              eaque odio, quam, dignissimos omnis doloremque, est tempore vitae.
+              Perspiciatis sit, quo molestiae libero quis commodi sed nulla sunt
+              fugiat expedita quisquam veritatis inventore illum minus in natus
+              nisi, laborum quia!
+            </p>
+            <button class="w-64 h-12 bg-orange-500 text-white rounded-xl mt-6">
+              Czytać
+            </button>
           </div>
-          <div
-            class="post bg-white rounded-2xl p-8 shadow-md flex flex-row m-6"
-          >
-            <img src="/img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
-            <div class="describe">
-              <h3 class="title text-2xl mousie-font">Title of new</h3>
-              <p class="mousie-font">Date: 01.03.2024</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                nisi explicabo nulla sequi magnam ullam fuga aliquid, eius
-                corporis iure voluptatem asperiores? Quia dicta ipsam at ad sunt
-                commodi eaque odio, quam, dignissimos omnis doloremque, est
-                tempore vitae. Perspiciatis sit, quo molestiae libero quis
-                commodi sed nulla sunt fugiat expedita quisquam veritatis
-                inventore illum minus in natus nisi, laborum quia!
-              </p>
-              <button
-                class="w-64 h-12 bg-orange-500 text-white rounded-xl mt-6"
-              >
-                Czytać
-              </button>
-            </div>
+        </div>
+        <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row m-6">
+          <img src="/img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
+          <div class="describe">
+            <h3 class="title text-2xl mousie-font">Title of new</h3>
+            <p class="mousie-font">Date: 01.03.2024</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nisi
+              explicabo nulla sequi magnam ullam fuga aliquid, eius corporis
+              iure voluptatem asperiores? Quia dicta ipsam at ad sunt commodi
+              eaque odio, quam, dignissimos omnis doloremque, est tempore vitae.
+              Perspiciatis sit, quo molestiae libero quis commodi sed nulla sunt
+              fugiat expedita quisquam veritatis inventore illum minus in natus
+              nisi, laborum quia!
+            </p>
+            <button class="w-64 h-12 bg-orange-500 text-white rounded-xl mt-6">
+              Czytać
+            </button>
           </div>
-          <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row">
-            <img src="/img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
-            <div class="describe">
-              <h3 class="title text-2xl mousie-font">Title of new</h3>
-              <p class="mousie-font">Date: 01.03.2024</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                nisi explicabo nulla sequi magnam ullam fuga aliquid, eius
-                corporis iure voluptatem asperiores? Quia dicta ipsam at ad sunt
-                commodi eaque odio, quam, dignissimos omnis doloremque, est
-                tempore vitae. Perspiciatis sit, quo molestiae libero quis
-                commodi sed nulla sunt fugiat expedita quisquam veritatis
-                inventore illum minus in natus nisi, laborum quia!
-              </p>
-              <button
-                class="w-64 h-12 bg-orange-500 text-white rounded-xl mt-6"
-              >
-                Czytać
-              </button>
-            </div>
+        </div>
+        <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row">
+          <img src="/img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
+          <div class="describe">
+            <h3 class="title text-2xl mousie-font">Title of new</h3>
+            <p class="mousie-font">Date: 01.03.2024</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nisi
+              explicabo nulla sequi magnam ullam fuga aliquid, eius corporis
+              iure voluptatem asperiores? Quia dicta ipsam at ad sunt commodi
+              eaque odio, quam, dignissimos omnis doloremque, est tempore vitae.
+              Perspiciatis sit, quo molestiae libero quis commodi sed nulla sunt
+              fugiat expedita quisquam veritatis inventore illum minus in natus
+              nisi, laborum quia!
+            </p>
+            <button class="w-64 h-12 bg-orange-500 text-white rounded-xl mt-6">
+              Czytać
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="footer h-[80px] bg-gray-300">
+    <footer class="footer h-[80px] blue-999">
       <div class="container mx-auto h-full p-8 flex items-center">
         <p>© 2024 Przedszkole BAJKOWA AKADEMIA w Goleniowie</p>
         <nav class="navigation"></nav>

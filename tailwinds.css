@@ -10,6 +10,9 @@
   .parallax-bg:hover {
     transform: translateY(-2px);
   }
+  .blue-999 {
+    background-color: #ebf8ff;
+  }
 }
 
 @tailwind utilities;
