@@ -73,7 +73,7 @@
         </label>
         
 
-        <!-- Навигационное меню -->
+        <!-- Nav-menu -->
         <nav class="navigation hidden sm:flex flex-col justify-center">
           <ul class="flex space-x-4 items-end sm:space-x-6 sm:items-center">
             <li
@@ -163,10 +163,10 @@
       </div>
     </header>
 
-    <!-- Переключатель для бургер-меню -->
+    <!-- Man-menu trigger -->
     <input type="checkbox" id="menu-toggle" class="hidden" />
 
-    <!-- Меню для маленьких экранов -->
+    <!-- Small screens menu -->
     <div class="sm:hidden fixed inset-0 bg-white z-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none" id="menu">
       <div class="flex justify-end items-center p-4">
         <!-- Кнопка закрытия меню (крестик) -->
@@ -228,13 +228,13 @@
       </div>
     </section>
     <section class="about w-wull h-[1200px] relative">
-      <div class="container mx-auto mt-24">
-        <div class="about-block mb-10 flex">
+      <div class="px-12 lg:container lg:mx-auto mt-24">
+        <div class="about-block mb-10 flex flex-row justify-between items-center">
           <div class="text-block w-1/2">
             <h2 class="text-6xl text-bold mousie-font text-orange-500 pb-10">
               Poznaj nas
             </h2>
-            <p class="text-lg pt-16">
+            <p class="text-lg pt-16 xl:pr-16">
               Przedszkole Publiczne "Bajkowa Akademia" wpisane jest do ewidencji
               szkół i placówek publicznych prowadzonej przez Gminę Goleniów.
               Nadzór nad placówką sprawuje Zachodniopomorski Kurator Oświaty.
@@ -251,7 +251,7 @@
           </div>
         </div>
         <div
-          class="goal-block flex flex-row justify-between mt-24 z-30 relative"
+          class="goal-block flex flex-row justify-between items-center mt-24 z-30 relative"
         >
           <div class="img-block w-1/2">
             <img src="img/goal.jpeg" alt="hands" class="rounded-2xl" />
@@ -262,7 +262,7 @@
             >
               Nasze cele
             </h2>
-            <p class="text-lg text-right pt-16">
+            <p class="text-lg text-right pt-16 xl:pl-16">
               Tworząc przyjazną, rodzinną atmosferę chcemy zapewnić dzieciom
               wspaniałe warunki do wszechstronnego rozwoju w poczuciu
               bezpieczeństwa i akceptacji. Pragniemy, aby nasze przedszkolaki
@@ -288,7 +288,7 @@
     </section>
 
     <section class="service h-[500px] blue-999 relative z-30">
-      <div class="container mx-auto pt-12">
+      <div class="px-12 lg:container lg:mx-auto pt-12">
         <h2
           class="text-6xl text-bold text-orange-500 pb-10 text-center mousie-font z-20"
         >
@@ -332,7 +332,7 @@
       </div>
     </section>
     <section
-      class="news h-[1200px] w-full overflow-hidden bg-[url('/img/bg.png')] relative"
+      class="news lg:h-[1400px] xl:h-[1200px] w-full overflow-hidden bg-[url('/img/bg.png')] relative"
       id="news"
     >
       <svg
@@ -348,7 +348,7 @@
       </svg>
 
       <div
-        class="container mx-auto relative z-10 py-10 flex flex-col justify-between"
+        class="px-12 lg:container lg:mx-auto relative z-10 py-10 flex flex-col justify-between"
       >
         <h2
           class="text-6xl text-center mousie-font text-orange-500 p-10 bg-white rounded-2xl mx-64 mb-12 shadow-sm z-40"
@@ -356,7 +356,7 @@
           Aktualności
         </h2>
         <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row">
-          <img src="img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
+          <img src="img/hero/1.jpg" alt="" class="w-1/2 xl:w-1/4 pr-16" />
           <div class="describe">
             <h3 class="title text-2xl mousie-font">Title of new</h3>
             <p class="mousie-font">Date: 01.03.2024</p>
@@ -374,8 +374,8 @@
             </button>
           </div>
         </div>
-        <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row m-6">
-          <img src="img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
+        <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row my-6">
+          <img src="img/hero/1.jpg" alt="" class="w-1/2 xl:w-1/4 pr-16" />
           <div class="describe">
             <h3 class="title text-2xl mousie-font">Title of new</h3>
             <p class="mousie-font">Date: 01.03.2024</p>
@@ -394,7 +394,7 @@
           </div>
         </div>
         <div class="post bg-white rounded-2xl p-8 shadow-md flex flex-row">
-          <img src="img/hero/1.jpg" alt="" class="w-1/4 pr-16" />
+          <img src="img/hero/1.jpg" alt="" class="w-1/2 xl:w-1/4 pr-16" />
           <div class="describe">
             <h3 class="title text-2xl mousie-font">Title of new</h3>
             <p class="mousie-font">Date: 01.03.2024</p>
@@ -429,7 +429,7 @@
       class="contact h-[700px] w-full relative overflow-hidden blue-999"
       id="contact"
     >
-      <div class="container mx-auto">
+      <div class="px-12 lg:container lg:mx-auto">
         <h2 class="text-6xl mousie-font text-orange-500 p-8 z-40">Kontakt</h2>
         <div class="bg-white rounded-2xl h-[550px] w-full flex flex-row">
           <div class="info w-1/2 p-8">
