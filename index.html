@@ -9,6 +9,30 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function toggleMenu() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const burgerMenu = document.querySelector('.block.bg-gray-800:nth-child(1)');
+        const burgerMenuMiddle = document.querySelector('.block.bg-gray-800:nth-child(2)');
+        const burgerMenuBottom = document.querySelector('.block.bg-gray-800:nth-child(3)');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.checked = !menuToggle.checked;
+        if (menuToggle.checked) {
+          burgerMenu.classList.add('rotate-45', '-translate-y-1', 'mb-2');
+          burgerMenuMiddle.classList.add('opacity-0');
+          burgerMenuBottom.classList.add('-rotate-45', 'translate-y-1', 'mt-2');
+          menu.classList.remove('opacity-0', 'pointer-events-none');
+          menu.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+          burgerMenu.classList.remove('rotate-45', '-translate-y-1', 'mb-2');
+          burgerMenuMiddle.classList.remove('opacity-0');
+          burgerMenuBottom.classList.remove('-rotate-45', 'translate-y-1', 'mt-2');
+          menu.classList.remove('opacity-100', 'pointer-events-auto');
+          menu.classList.add('opacity-0', 'pointer-events-none');
+        }
+      }
+    </script>
     <style>
       @font-face {
         font-family: "Mousie";
@@ -23,21 +47,41 @@
   <body>
     <!-- <body class="bg-[url('/img/bg.png')] bg-no-repeat bg-cover"> -->
     <header class="bg-white shadow-md py-4 fixed w-full z-50">
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="logo">
+      <div
+        class="lg:container w-full px-4 lg:mx-auto flex lg:flex-row justify-between items-center"
+      >
+        <div class="logo mr-4">
           <h1 class="text-4xl text-green-500 font-bold">Bajkowa Akademia</h1>
           <p>PRZEDSZKOLE PUBLICZNE W GOLENIOWIE</p>
         </div>
 
-        <input type="checkbox" id="menu-toggle" class="hidden" />
-        <nav class="navigation">
+        <!-- Иконка бургер-меню для маленьких экранов -->
+        <label
+          for="menu-toggle"
+          class="block sm:hidden cursor-pointer"
+          onclick="toggleMenu()"
+        >
+          <span
+            class="block bg-gray-800 h-1 w-6 mb-1 transition duration-300 transform"
+          ></span>
+          <span
+            class="block bg-gray-800 h-1 w-6 mb-1 transition duration-300 transform"
+          ></span>
+          <span
+            class="block bg-gray-800 h-1 w-6 transition duration-300 transform"
+          ></span>
+        </label>
+        
+
+        <!-- Навигационное меню -->
+        <nav class="navigation hidden sm:flex flex-col justify-center">
           <ul class="flex space-x-4 items-end sm:space-x-6 sm:items-center">
             <li
               class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
             >
-              <a href="#" class="flex flex-col items-center">
+              <a href="/" class="flex flex-col items-center">
                 <img
-                  src="/img/menu-img/house.png"
+                  src="/img/menu-img/home.png"
                   alt="Glowna"
                   class="w-16 mb-2"
                 />Glówna
@@ -46,14 +90,51 @@
             <li
               class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
             >
+              <a href="#news" class="flex flex-col items-center">
+                <img
+                  src="/img/menu-img/news.png"
+                  alt="Aktualnośći"
+                  class="w-16 mb-2"
+                />Aktualnośći
+              </a>
+            </li>
+            <!-- Добавляем класс dropdown к li с классом Informacja -->
+            <li
+              class="relative mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105 group"
+            >
               <a href="#" class="flex flex-col items-center">
                 <img
-                  src="/img/menu-img/rubber-duck.png"
+                  src="/img/menu-img/docs.png"
                   alt="Informacja"
                   class="w-16 mb-2"
-                />
-                Informacja
+                />Informacja
               </a>
+              <!-- dropdown -->
+              <div
+                class="absolute hidden group-hover:block bg-white py-2 rounded-lg shadow-md w-60"
+              >
+                <!-- Добавляем ссылки в выпадающее меню -->
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >Organizacja</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >Program</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >Zajęcia</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >Dla rodzica</a
+                >
+              </div>
             </li>
             <li
               class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
@@ -69,20 +150,64 @@
             <li
               class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
             >
-              <a href="#" class="flex flex-col items-center">
+              <a href="#contact" class="flex flex-col items-center">
                 <img
                   src="/img/menu-img/dino-kid.png"
                   alt="Kontakt"
                   class="w-16 mb-2"
-                />
-                Kontakt
+                />Kontakt
               </a>
             </li>
           </ul>
         </nav>
-        <label for="menu-toggle" class="block sm:hidden">&#9776;</label>
       </div>
     </header>
+
+    <!-- Переключатель для бургер-меню -->
+    <input type="checkbox" id="menu-toggle" class="hidden" />
+
+    <!-- Меню для маленьких экранов -->
+    <div class="sm:hidden fixed inset-0 bg-white z-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none" id="menu">
+      <div class="flex justify-end items-center p-4">
+        <!-- Кнопка закрытия меню (крестик) -->
+        <label for="menu-toggle" class="cursor-pointer">&#10006;</label>
+      </div>
+        <ul class="space-y-4">
+          <li><a href="/" class="font-bold text-xl">Glówna</a></li>
+          <li><a href="#news" class="font-bold text-xl">Aktualnośći</a></li>
+          <li class="relative group">
+            <a href="#" class="font-bold text-xl">Informacja</a>
+            <!-- dropdown -->
+            <div
+              class="absolute hidden group-hover:block bg-white py-2 rounded-lg shadow-md w-60"
+            >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >Organizacja</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >Program</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >Zajęcia</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >Dla rodzica</a
+              >
+            </div>
+          </li>
+          <li><a href="#" class="font-bold text-xl">Galeria</a></li>
+          <li><a href="#contact" class="font-bold text-xl">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <section class="hero w-full h-screen overflow-hidden z-30">
       <div class="h-full bg-[url('/img/bg.jpg')] bg-cover bg-center">
@@ -207,7 +332,8 @@
       </div>
     </section>
     <section
-      class="news h-[1200px] w-full relative overflow-hidden bg-[url('/img/bg.png')] relative"
+      class="news h-[1200px] w-full overflow-hidden bg-[url('/img/bg.png')] relative"
+      id="news"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -284,6 +410,112 @@
             <button class="w-64 h-12 bg-orange-500 text-white rounded-xl mt-6">
               Czytać
             </button>
+          </div>
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        class="absolute z-1 bottom-0 left-0"
+      >
+        <path
+          fill="#ebf8ff"
+          fill-opacity="1"
+          d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+    <section
+      class="contact h-[700px] w-full relative overflow-hidden blue-999"
+      id="contact"
+    >
+      <div class="container mx-auto">
+        <h2 class="text-6xl mousie-font text-orange-500 p-8 z-40">Kontakt</h2>
+        <div class="bg-white rounded-2xl h-[550px] w-full flex flex-row">
+          <div class="info w-1/2 p-8">
+            <div class="flex flex-row justify-between">
+              <div class="info-1">
+                <h4 class="text-4xl mousie-font">Siedziba:</h4>
+                <div class="flex flex-row jusstify-between items-center my-4">
+                  <img
+                    src="/img/contact-img/pin.png"
+                    alt="map pin"
+                    class="w-16 mr-8"
+                  />
+                  <p class="text-xl">ul. Matejki 22, Goleniów</p>
+                </div>
+                <div class="flex flex-row jusstify-between items-center my-4">
+                  <img
+                    src="/img/contact-img/phone.png"
+                    alt="map pin"
+                    class="w-16 mr-8"
+                  />
+                  <div class="flex flex-col py-6 text-xl">
+                    <a href="tel:+48733326002">733-326-002</a>
+                    <a href="tel:+48501317012">501-317-012</a>
+                  </div>
+                </div>
+                <p></p>
+              </div>
+              <div class="info-2">
+                <h4 class="text-4xl mousie-font">Nasz Oddział:</h4>
+                <div class="flex flex-row jusstify-between items-center my-4">
+                  <img
+                    src="/img/contact-img/pin.png"
+                    alt="map pin"
+                    class="w-16 mr-8"
+                  />
+                  <p class="text-xl">ul. Sportowa 4, Goleniów</p>
+                </div>
+                <div class="flex flex-row jusstify-between items-center my-8">
+                  <img
+                    src="/img/contact-img/phone.png"
+                    alt="map pin"
+                    class="w-16 mr-8"
+                  />
+                  <a href="tel:+48600 641 034" class="text-xl mt-4"
+                    >600-641-034</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="info-3">
+              <div class="flex flex-row items-center justify-center my-8">
+                <img src="/img/contact-img/mail.png" alt="" class="w-16 mr-8" />
+                <a href="mailto:bajkowa-akademia@wp.pl" class="text-xl"
+                  >bajkowa-akademia@wp.pl</a
+                >
+              </div>
+              <div
+                class="flex flex-row items-center justify-center items-center"
+              >
+                <img
+                  src="/img/contact-img/facebook.png"
+                  alt=""
+                  class="w-16 mr-8"
+                />
+                <a
+                  href="https://www.facebook.com/pages/Przedszkole-Niepubliczne-Bajkowa-Akademia/1417946418461430"
+                  class="text-xl"
+                >
+                  "Bajkowa Akademia" na facebooku</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="map w-1/2 rounded-r-2xl">
+            <iframe
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Przedszkole%20Niepubliczne%20Bajkowa%20Akademia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              width="100%"
+              height="550"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Our Location"
+              class="shadow-md"
+              style="border: 0px"
+            ></iframe>
           </div>
         </div>
       </div>
