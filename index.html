@@ -9,30 +9,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      function toggleMenu() {
-        const menuToggle = document.getElementById('menu-toggle');
-        const burgerMenu = document.querySelector('.block.bg-gray-800:nth-child(1)');
-        const burgerMenuMiddle = document.querySelector('.block.bg-gray-800:nth-child(2)');
-        const burgerMenuBottom = document.querySelector('.block.bg-gray-800:nth-child(3)');
-        const menu = document.getElementById('menu');
-    
-        menuToggle.checked = !menuToggle.checked;
-        if (menuToggle.checked) {
-          burgerMenu.classList.add('rotate-45', '-translate-y-1', 'mb-2');
-          burgerMenuMiddle.classList.add('opacity-0');
-          burgerMenuBottom.classList.add('-rotate-45', 'translate-y-1', 'mt-2');
-          menu.classList.remove('opacity-0', 'pointer-events-none');
-          menu.classList.add('opacity-100', 'pointer-events-auto');
-        } else {
-          burgerMenu.classList.remove('rotate-45', '-translate-y-1', 'mb-2');
-          burgerMenuMiddle.classList.remove('opacity-0');
-          burgerMenuBottom.classList.remove('-rotate-45', 'translate-y-1', 'mt-2');
-          menu.classList.remove('opacity-100', 'pointer-events-auto');
-          menu.classList.add('opacity-0', 'pointer-events-none');
-        }
-      }
-    </script>
+    <script src="js/main.js"></script>
     <style>
       @font-face {
         font-family: "Mousie";
@@ -55,7 +32,6 @@
           <p class="text-sm lg:text-xl">PRZEDSZKOLE PUBLICZNE W GOLENIOWIE</p>
         </div>
 
-        <!-- Иконка бургер-меню для маленьких экранов -->
         <label
           for="menu-toggle"
           class="block sm:hidden cursor-pointer"
@@ -113,7 +89,7 @@
               <div
                 class="absolute hidden group-hover:block bg-white py-2 rounded-lg shadow-md w-60"
               >
-                <!-- Добавляем ссылки в выпадающее меню -->
+              
                 <a
                   href="#"
                   class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
@@ -164,22 +140,20 @@
     </header>
 
     <!-- Man-menu trigger -->
-    <input type="checkbox" id="menu-toggle" class="hidden" />
+    <input type="checkbox" id="menu-toggle" class="hidden w-full h-full z-50" />
 
     <!-- Small screens menu -->
-    <div class="sm:hidden fixed inset-0 bg-white z-50 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none" id="menu">
+    <div class="sm:hidden fixed inset-0 bg-white z-40 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none px-6" id="menu">
       <div class="flex justify-end items-center p-4">
-        <!-- Кнопка закрытия меню (крестик) -->
-        <label for="menu-toggle" class="cursor-pointer">&#10006;</label>
       </div>
-        <ul class="space-y-4">
-          <li><a href="/" class="font-bold text-xl">Glówna</a></li>
-          <li><a href="#news" class="font-bold text-xl">Aktualnośći</a></li>
+        <ul class="space-y-4 pt-16">
+          <li><a href="/" class="font-bold text-xl hover:text-green-500">Glówna</a></li>
+          <li><a href="#news" class="font-bold text-xl hover:text-green-500">Aktualnośći</a></li>
           <li class="relative group">
-            <a href="#" class="font-bold text-xl">Informacja</a>
+            <a href="#" class="font-bold text-xl hover:text-green-500">Informacja</a>
             <!-- dropdown -->
             <div
-              class="absolute hidden group-hover:block bg-white py-2 rounded-lg shadow-md w-60"
+              class="hidden group-hover:block py-2"
             >
               <a
                 href="#"
@@ -203,8 +177,8 @@
               >
             </div>
           </li>
-          <li><a href="#" class="font-bold text-xl">Galeria</a></li>
-          <li><a href="#contact" class="font-bold text-xl">Kontakt</a></li>
+          <li><a href="#" class="font-bold text-xl hover:text-green-500">Galeria</a></li>
+          <li><a href="#contact" class="font-bold text-xl hover:text-green-500">Kontakt</a></li>
         </ul>
       </nav>
     </div>

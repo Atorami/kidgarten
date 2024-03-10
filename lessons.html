@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zajęcia</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function toggleMenu() {
+        const menuToggle = document.getElementById("menu-toggle");
+        const burgerMenu = document.querySelector(
+          ".block.bg-gray-800:nth-child(1)"
+        );
+        const burgerMenuMiddle = document.querySelector(
+          ".block.bg-gray-800:nth-child(2)"
+        );
+        const burgerMenuBottom = document.querySelector(
+          ".block.bg-gray-800:nth-child(3)"
+        );
+        const menu = document.getElementById("menu");
+
+        menuToggle.checked = !menuToggle.checked;
+        if (menuToggle.checked) {
+          burgerMenu.classList.add("rotate-45", "-translate-y-1", "mb-2");
+          burgerMenuMiddle.classList.add("opacity-0");
+          burgerMenuBottom.classList.add("-rotate-45", "translate-y-1", "mt-2");
+          menu.classList.remove("opacity-0", "pointer-events-none");
+          menu.classList.add("opacity-100", "pointer-events-auto");
+        } else {
+          burgerMenu.classList.remove("rotate-45", "-translate-y-1", "mb-2");
+          burgerMenuMiddle.classList.remove("opacity-0");
+          burgerMenuBottom.classList.remove(
+            "-rotate-45",
+            "translate-y-1",
+            "mt-2"
+          );
+          menu.classList.remove("opacity-100", "pointer-events-auto");
+          menu.classList.add("opacity-0", "pointer-events-none");
+        }
+      }
+    </script>
+    <style>
+      @font-face {
+        font-family: "Mousie";
+        src: url("font/mm/MouseMemoirs-Regular.ttf") format("opentype");
+      }
+      .mousie-font {
+        font-family: "Mousie", sans-serif;
+      }
+    </style>
+    <link href="tailwinds.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="bg-white shadow-md py-4 fixed w-full z-50">
+      <div
+        class="lg:container w-full px-4 lg:mx-auto flex lg:flex-row justify-between items-center"
+      >
+        <div class="logo mr-4">
+          <h1 class="text-xl lg:text-4xl text-green-500 font-bold">
+            Bajkowa Akademia
+          </h1>
+          <p class="text-sm lg:text-xl">PRZEDSZKOLE PUBLICZNE W GOLENIOWIE</p>
+        </div>
+
+        <!-- Иконка бургер-меню для маленьких экранов -->
+        <label
+          for="menu-toggle"
+          class="block sm:hidden cursor-pointer"
+          onclick="toggleMenu()"
+        >
+          <span
+            class="block bg-gray-800 h-1 w-6 mb-1 transition duration-300 transform"
+          ></span>
+          <span
+            class="block bg-gray-800 h-1 w-6 mb-1 transition duration-300 transform"
+          ></span>
+          <span
+            class="block bg-gray-800 h-1 w-6 transition duration-300 transform"
+          ></span>
+        </label>
+
+        <!-- Nav-menu -->
+        <nav class="navigation hidden sm:flex flex-col justify-center">
+          <ul class="flex space-x-4 items-end sm:space-x-6 sm:items-center">
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="/" class="flex flex-col items-center">
+                <img
+                  src="img/menu-img/home.png"
+                  alt="Glowna"
+                  class="w-16 mb-2"
+                />Glówna
+              </a>
+            </li>
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="#news" class="flex flex-col items-center">
+                <img
+                  src="img/menu-img/news.png"
+                  alt="Aktualnośći"
+                  class="w-16 mb-2"
+                />Aktualnośći
+              </a>
+            </li>
+            <!-- Добавляем класс dropdown к li с классом Informacja -->
+            <li
+              class="relative mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105 group"
+            >
+              <a href="#" class="flex flex-col items-center">
+                <img
+                  src="img/menu-img/docs.png"
+                  alt="Informacja"
+                  class="w-16 mb-2"
+                />Informacja
+              </a>
+              <!-- dropdown -->
+              <div
+                class="absolute hidden group-hover:block bg-white py-2 rounded-lg shadow-md w-60"
+              >
+                <!-- Добавляем ссылки в выпадающее меню -->
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >Organizacja</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >Program</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-gray-800 hover:bg -gray-200"
+                  >Zajęcia</a
+                >
+                <a
+                  href="parents-info.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >Dla rodzica</a
+                >
+              </div>
+            </li>
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="#" class="flex flex-col items-center">
+                <img
+                  src="img/menu-img/pic.png"
+                  alt="Galeria"
+                  class="w-16 mb-2"
+                />Galeria</a
+              >
+            </li>
+            <li
+              class="mb-2 sm:mb-0 transform transition duration-300 ease-in-out hover:scale-105"
+            >
+              <a href="#contact" class="flex flex-col items-center">
+                <img
+                  src="img/menu-img/dino-kid.png"
+                  alt="Kontakt"
+                  class="w-16 mb-2"
+                />Kontakt
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section
+      class="main h-screen w-full bg-[url('/img/bg.png')] bg-no-repeat bg-cover"
+    >
+      <div class="container mx-auto h-[100vh] bg-white p-12 pt-44 shadow-md">
+        <h4 class="text-6xl mousie-font text-orange-500 text-bold mb-12">
+          Strefa: Zajęcia
+        </h4>
+      </div>
+    </section>
+    <footer class="footer h-[80px] blue-999">
+      <div
+        class="px-4 lg:container lg:mx-auto h-full p-8 flex items-center text-center lg:text-start"
+      >
+        <p>© 2024 Przedszkole BAJKOWA AKADEMIA w Goleniowie</p>
+        <nav class="navigation"></nav>
+      </div>
+    </footer>
+  </body>
+</html>
